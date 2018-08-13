@@ -1,0 +1,3 @@
+xle_cafe_cmanager:
+    resource: "@XleCafeBundle/Resources/config/routing/cafe.yml"
+    prefix:   /map

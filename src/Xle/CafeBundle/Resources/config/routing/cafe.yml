@@ -1,0 +1,49 @@
+cmanager_list:
+    path:     /
+    defaults: { _controller: "XleCafeBundle:Cafe:list" }
+    methods:  GET
+
+cmanager_info:
+    path:     /{cafe_id}/info
+    defaults: { _controller: "XleCafeBundle:Cafe:info" }
+    methods:  POST
+
+cmanager_info1:
+    path:     /{cafe_id}/info1
+    defaults: { _controller: "XleCafeBundle:Cafe:info1" }
+    methods:  [GET, POST]
+
+cmanager_db:
+    path:     /db
+    defaults: { _controller: "XleCafeBundle:Cafe:db" }
+    methods:  [GET, POST]
+
+cmanager_map:
+    path:     /{cafe_json}/map
+    defaults: { _controller: "XleCafeBundle:Cafe:map" }
+    methods:  GET
+
+cmanager_modify:
+    path:     /modify
+    defaults: { _controller: "XleCafeBundle:Cafe:modify" }
+    methods:  POST
+
+cmanager_append:
+    path:     /append
+    defaults: { _controller: "XleCafeBundle:Cafe:append" }
+    methods:  POST
+
+cmanager_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "XleCafeBundle:Cafe:delete" }
+    methods:  DELETE
+
+cmanager_register:
+    path:     /register
+    defaults: { _controller: "XleCafeBundle:Registration:register" }
+    methods:  [GET, POST]
+
+
+
+
+

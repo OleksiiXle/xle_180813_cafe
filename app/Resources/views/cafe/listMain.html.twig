@@ -1,0 +1,48 @@
+{% extends 'baseCafe.html.twig' %}
+
+        {% block javascripts %}
+            <script src="{{ asset('build/js/cafeMapCommon1.js') }}"></script>
+        {% endblock %}
+        {% block title %}Поиск кафе{% endblock %}
+        {% block contentHeader %}
+            <div class="row>" style="margin: 0; padding: 5px; ">
+                <div class="col-md-7">
+                    <input type="text" id="searchTextField" class="form-control" size="65">
+                </div>
+                <div class="col-md-3">
+                    <select id="mapRadius" class="form-control"
+                            onchange="radiusSearch = this.value">
+                        <option value="500">500 м.</option>
+                        <option value="1000">1000 м.</option>
+                        <option value="1500">1500 м.</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-success"
+                            onclick="
+                           searchByAdress();">
+                        Поиск по адресу
+                    </button>
+
+                </div>
+            </div>
+        {% endblock %}
+        {% block contentLeft %}
+            <div class="container-fluid">
+                <div class="row">
+                    <button id="showModeSwitch" class="btn btn-default"
+                            data-action='show_db'
+                             onclick="switchDbMap(this)">
+                        Показать список сохраненных кафе
+                    </button>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="cafeGrid"></div>
+                </div>
+            </div>
+        {% endblock %}
+
+
+

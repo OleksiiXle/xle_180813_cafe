@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+ {% block js_map %}
+     <script src="{{ asset('build/js/jquery-3.3.1.min.js') }}"></script>
+     <script
+             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFePQo22izGTzUMMFLUGH5NBvRSboTGY0&libraries=places&callback=initMap"
+             async defer>
+     </script>
+     {% block javascripts %}{% endblock %}
+ {% endblock %}
+
+ {% block headerTitle %}
+      Поиск кафе
+ {% endblock %}

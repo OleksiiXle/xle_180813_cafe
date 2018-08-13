@@ -1,0 +1,106 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <b>Список сохраненных кафе</b>
+            <div class="scroll-block">
+                <table class="table-hover table-bordered" style="width: 100%;">
+                    <thead>
+                    <tr>
+                        <th class="myTd">Название</th>
+                        <th class="myTd">Рейтинг</th>
+                        <th class="myTd">Статус</th>
+                        <th class="myTd">Действия</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for cafe in cafes %}
+                        <tr id="tr_{{ cafe.id }}" >
+                            <td id="td_title_{{ cafe.id }}" class="myTd">{{ cafe.title }}</td>
+                            <td id="td_raiting_{{ cafe.id }}" class="myTd">{{ cafe.raitingTxt }}</td>
+                            <td id="td_status_{{ cafe.id }}" class="myTd">{{ cafe.statusTxt }}</td>
+                            <td class="myTd">
+                                        <span>
+                                           <a href="#"
+                                              id="view_{{ cafe.id }}"
+                                              class="view_btn"
+                                              title="Просмотр"
+                                              onclick="viewWindowOpen(this); centeredCafe(this);"
+                                              data-action='to_open'
+                                              data-cafe_id = "{{ cafe.id }}"
+                                              data-lat = "{{ cafe.lat }}"
+                                              data-lng = "{{ cafe.lng }}"
+                                            >
+                                            <span class="glyphicon glyphicon-eye-open"></span>
+                                          </a>
+                                           <a href="#"
+                                              id="update_{{ cafe.id }}"
+                                              class="update_btn"
+                                              title="Редактирование"
+                                              data-action='to_open'
+                                              data-cafe_id = {{ cafe.id }}
+                                              onclick="updateWindowOpen(this);">
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                          </a>
+                                           <a href="#"
+                                              id="delete_{{ cafe.id }}"
+                                              class="delete_btn"
+                                              title="Удаление"
+                                              data-cafe_id = {{ cafe.id }}
+                                              onclick="deleteCafe(this);">
+                                            <span class="glyphicon glyphicon glyphicon-trash"></span>
+                                          </a>
+
+                                        </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <div id="updateWindow_{{ cafe.id }}" class="updateWindow" style="display: none">
+                                </div>
+                                <div id="infoWindow_{{ cafe.id }}" class="infoWindow" style="display: none">
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+            <div id="viewExample" style="display: none">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="field-name">Идентификатор - <span id="id" class="field-value"></span> </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="field-name">Идентификатор Google - <span id="google_place_id" class="field-value"></span> </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="field-name">Название - <span id="title" class="field-value"></span> </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="field-name">Адрес - <span id="address" class="field-value"></span> </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="field-name">Рейтинг - <span id="raiting" class="field-value"></span> </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="field-name">Отзыв - <span id="review" class="field-value"></span> </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="field-name">Статус - <span id="status" class="field-value"></span> </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="field-name">Координаты - <span id="latLng" class="field-value"></span> </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+

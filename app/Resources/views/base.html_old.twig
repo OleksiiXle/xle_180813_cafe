@@ -3,16 +3,18 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <title>{% block title %}{% endblock %}</title>
-    <script src="{{ asset('build/js/jquery-3.3.1.min.js') }}"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('build/css/app.css') }}">
-
-            <link rel="stylesheet" href="{{ asset('build/bootstrap-3.3.2/css/bootstrap.min.css') }}">
-            <link rel="stylesheet" href="{{ asset('build/bootstrap-3.3.2/css/bootstrap-theme.min.css') }}">
         {% endblock %}
-    <script src="{{ asset('build/bootstrap-3.3.2/js/bootstrap.min.js') }}"></script>
-
-    <style>
+        <style>
             /* Always set the map height explicitly to define the size of the div
              * element that contains the map. */
             .contentHeader{

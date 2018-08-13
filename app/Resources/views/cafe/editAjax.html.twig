@@ -1,0 +1,9 @@
+<div class="edit-cafe-form">
+    {% block body %}
+        <h3>Оцените кафе</h3>
+        {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="button" value="Сохранить" onclick="updateCafe()" />
+        {{ form_end(edit_form) }}
+    {% endblock %}
+</div>

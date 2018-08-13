@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: "@XleCafeBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -30,11 +31,16 @@ framework:
     assets: ~
     php_errors:
         log: true
+    cache:
+        prefix_seed: xle-cafe
 
 # Twig Configuration
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    form_themes:
+        - 'form/layout.html.twig'
+        - 'form/fields.html.twig'
 
 # Doctrine Configuration
 doctrine:
