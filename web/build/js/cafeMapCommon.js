@@ -41,6 +41,7 @@ function initMap() {
             refreshMap();
         }
     });
+
     //-- определение границ автокомплита - почему то не работает
     var defaultBounds = new google.maps.LatLngBounds(
         new google.maps.LatLng(50.04821, 36.18862100000001),
@@ -53,7 +54,7 @@ function initMap() {
     };
     autocomplete = new google.maps.places.Autocomplete(input, options);
     document.getElementById('searchTextField').placeholder = 'Введите адрес';
-    console.log('map is ready');
+    console.log('map is ready77');
 
 }
 
@@ -141,6 +142,8 @@ function callbackRefreshMap(results, status) {
                 console.log('Завершился неудачей Ajax запрос');
             }
         );
+    } else {
+        alert('Не удалось получить данные Google Map Api: ' + status);
     }
 }
 

@@ -17,7 +17,7 @@ class UserFixtures extends AbstractFixture implements ContainerAwareInterface {
         $passwordEncoder = $this->container->get('security.password_encoder');
 
         $cafeAdmin = new User();
-        $cafeAdmin->setFullName('Administrator');
+        $cafeAdmin->setFullname('Administrator');
         $cafeAdmin->setUsername('admin');
         $cafeAdmin->setEmail('gastronome@cafe.com');
         $cafeAdmin->setRoles(['ROLE_ADMIN']);
@@ -27,7 +27,7 @@ class UserFixtures extends AbstractFixture implements ContainerAwareInterface {
         $this->addReference('admin', $cafeAdmin);
 
         $cafeUser = new User();
-        $cafeUser->setFullName('Simple User');
+        $cafeUser->setFullname('Simple User');
         $cafeUser->setUsername('user');
         $cafeUser->setEmail('hungry@cafe.com');
         $cafeUser->setRoles(['ROLE_USER']);
