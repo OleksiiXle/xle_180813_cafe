@@ -8,12 +8,6 @@
         AllowOverride All        
     </Directory>
 
-    # Уберите комментарии из следующих строк, если вы установили ресурсы как символьные ссылки
-    # или столкнётесь с проблемами при компиляции ресурсов LESS/Sass/CoffeeScript
-    # <Directory /var/www/project>
-    #     Options FollowSymlinks
-    # </Directory>
-
     ErrorLog /var/log/apache2/project_error.log
     CustomLog /var/log/apache2/project_access.log combined
 </VirtualHost>
