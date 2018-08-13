@@ -83,7 +83,7 @@ class User implements UserInterface, \Serializable
      */
     public function setFullname($fullName)
     {
-        $this->fullName = $fullName;
+        $this->fullname = $fullName;
     }
 
     public function getFullname()
