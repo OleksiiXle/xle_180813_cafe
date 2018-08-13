@@ -1,0 +1,3 @@
+xle_cafe_cmanager:
+    resource: "@AppBundle/Resources/config/routing/app.yml"
+    prefix:   /app
