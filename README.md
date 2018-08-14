@@ -18,13 +18,16 @@
 4. Composer update
 5. Проверить настройки БД в файле app/config/parameters.yml
 По умолчанию там - env(DATABASE_URL): 'mysql://root:111@127.0.0.1:3306/symfony_cafe'
-Усли все устраивает:
-6.php bin/console doctrine:database:create
-  php bin/console doctrine:schema:create
-  php bin/console doctrine:fixtures:load
+6. Если все устраивает:
+php bin/console doctrine:database:create
+php bin/console doctrine:schema:create
+php bin/console doctrine:fixtures:load
   
   Будет создана БД, таблица cafe с несколькими тестовыми записями и таблица xle_user с двумя записями: администратор
   admin, пароль admin, и user, пароль admin
+  
+* если решать проблему предоставления доступа web-процессу через SUDO chmod - после этих действий скорее всего необходимо
+ будет повторить процедуру предоставления доступа
   
 Инструкция по использованию
 1-й экран
