@@ -293,4 +293,38 @@ class CafeController extends Controller {
         }
         return new Response( json_encode($result), 200 );
     }
+
+    /**
+     * ajax send cafe JSON.
+     */
+    public function cafeAction() {
+        $ret = [];
+        try {
+            $em = $this->getDoctrine()->getManager();
+            $cafes = $em->getRepository(Cafe::class)->apiEndPoint();
+            if (isset($cafes)){
+                foreach ($cafes as $cafe){
+                    $ret [] = [
+                        'id' => $cafe->getId(),
+                        'google_place_id' => $cafe->getGooglePlaceId(),
+                        'title' => $cafe->getTitle(),
+                        'raiting' =>  (!empty($cafe->getRaiting()))
+                            ? $this->raiting[$cafe->getRaiting()]
+                            : 'Не установлен',
+                        'review' => $cafe->getReview(),
+                        'status' => (($cafe->getRaiting() > 0 || !empty($cafe->getReview())) ? 'Оценено' : 'Не оценено'),
+                        'address' => $cafe->getAddress(),
+                        'lat' => $cafe->getLat(),
+                        'lang' => $cafe->getLng(),
+                    ];
+
+                }
+            }
+        } catch (\Exception $e){
+            $ret = [$e->getMessage()];
+        }
+        return new Response( json_encode($ret), 200 );
+
+    }
+
 }

@@ -55,7 +55,7 @@ function initMap() {
     };
     autocomplete = new google.maps.places.Autocomplete(input, options);
     document.getElementById('searchTextField').placeholder = 'Введите адрес';
-    console.log('map is ready77111');
+   // console.log('map is ready77111');
 
 }
 

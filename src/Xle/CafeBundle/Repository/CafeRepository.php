@@ -20,6 +20,16 @@ class CafeRepository extends \Doctrine\ORM\EntityRepository {
         return $qb->execute();
     }
 
+    public function apiEndPoint(): array {
+        $qb = $this->createQueryBuilder('c')
+            ->andWhere('c.raiting != (:n)')
+            ->setParameter('n', 'NULL')
+            ->getQuery();
+       //   $sql = $qb->getSQL();
+        return $qb->execute();
+    }
+
+
     public function findByGmKeyInArray2($mapCafesIds) {
         $mapCafesIdsStr = implode(',', $mapCafesIds);
         $query = $this->getEntityManager()

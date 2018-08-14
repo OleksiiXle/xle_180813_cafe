@@ -43,6 +43,12 @@ cmanager_register:
     defaults: { _controller: "XleCafeBundle:Registration:register" }
     methods:  [GET, POST]
 
+cmanager_cafe:
+    path:     /api/cafe
+    defaults: { _controller: "XleCafeBundle:Cafe:cafe" }
+    methods:  GET
+
+
 
 
 
