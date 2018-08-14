@@ -1,6 +1,7 @@
 // 50.04821, 36.18862100000001
 //49.953905, 36.33076249999999
 var map;
+//var autocomplete;
 var infowindow;
 var coordinates = {lat: 50.015, lng: 36.220};
 var mainMarker;
@@ -22,7 +23,7 @@ function initMap() {
     //-- маркер местоположения - дефолтно - середина
     drawMainMarker();
     //-- получить и нарисовать кафе вокруг основного маркера
-    refreshMap();
+   // refreshMap();
     //-- активировать информационное окошко
     infowindow = new google.maps.InfoWindow();
     //-- обработка события по клику на карту - все маркеры удаляются, основной пеперисовываетсф в месте клика
@@ -41,6 +42,7 @@ function initMap() {
             refreshMap();
         }
     });
+
     //-- определение границ автокомплита - почему то не работает
     var defaultBounds = new google.maps.LatLngBounds(
         new google.maps.LatLng(50.04821, 36.18862100000001),
@@ -53,7 +55,7 @@ function initMap() {
     };
     autocomplete = new google.maps.places.Autocomplete(input, options);
     document.getElementById('searchTextField').placeholder = 'Введите адрес';
-    console.log('map is ready');
+    console.log('map is ready77111');
 
 }
 
@@ -141,6 +143,8 @@ function callbackRefreshMap(results, status) {
                 console.log('Завершился неудачей Ajax запрос');
             }
         );
+    } else {
+        alert('Не удалось получить данные Google Map Api: ' + status);
     }
 }
 
@@ -190,6 +194,11 @@ function searchByAdress() {
         refreshMap();
         drawMainMarker();
     } else {
+        var reply = {
+            'text' : 'Поиск неудачный',
+            'Google Map Api Reply' : place
+        };
+        objDump(reply);
         document.getElementById('searchTextField').value = null;
         document.getElementById('searchTextField').placeholder = 'Введите адрес';
     }
