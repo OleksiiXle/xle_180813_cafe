@@ -26,5 +26,5 @@
   Будет создана БД, таблица cafe с несколькими тестовыми записями и таблица xle_user с двумя записями: администратор
   admin, пароль admin, и user, пароль admin
   
-  ![Иллюстрация к проекту](https://github.com/OleksiiXle/xle_180813_cafe.git/raw/master/web/build/images/map1.png)
+  ![Иллюстрация к проекту](https://github.com/OleksiiXle/xle_180813_cafe.git/web/build/images/map1.png)
 
